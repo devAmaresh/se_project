@@ -1,7 +1,5 @@
 # This repo is regarding the software engineering project ..
 
-Certainly! Here's the complete README.md content written in Markdown format for your project:
-
 # Project Name Parking Management System
 This repository contains the software engineering project.
 
@@ -19,12 +17,7 @@ git clone https://github.com/devAmaresh/se_project.git
 
 ### 2. Set Up Virtual Environment
 
-Navigate to the project directory and set up a virtual environment. If you haven't installed `virtualenv`, you can install it using `pip`:
-
-```bash
-pip install virtualenv
-```
-
+Navigate to the project directory and set up a virtual environment.
 Create a virtual environment:
 
 ```bash

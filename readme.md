@@ -2,7 +2,6 @@
 
 Certainly! Here's the complete README.md content written in Markdown format for your project:
 
-```markdown
 # Project Name Parking Management System
 This repository contains the software engineering project.
 

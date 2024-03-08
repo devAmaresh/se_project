@@ -55,7 +55,7 @@ The project should now be running locally. You can access it in your web browser
 
 ### 5.Running Tailwind(optional)
 
-Prerequisites
+#### Prerequisites
 Ensure you have Node.js installed on your system.
 
 Install npm packages:

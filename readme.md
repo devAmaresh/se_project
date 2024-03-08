@@ -23,24 +23,24 @@ Navigate to the project directory and set up a virtual environment. If you haven
 
 ```bash
 pip install virtualenv
-
+```
 
 Create a virtual environment:
 
 ```bash
-virtualenv venv
+python -m venv myvenv
 ```
 
 Activate the virtual environment:
 
 - On Windows:
 ```bash
-venv\Scripts\activate
+myvenv\Scripts\activate
 ```
 
 - On macOS and Linux:
 ```bash
-source venv/bin/activate
+source myvenv/bin/activate
 ```
 
 ### 3. Install Dependencies

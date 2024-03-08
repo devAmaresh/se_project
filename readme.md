@@ -14,7 +14,7 @@ Follow these steps to run the project on your local machine:
 Clone this repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/your-username/repository-name.git
+git clone https://github.com/devAmaresh/se_project.git
 ```
 
 ### 2. Set Up Virtual Environment

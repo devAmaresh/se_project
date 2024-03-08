@@ -24,7 +24,7 @@ Navigate to the project directory and set up a virtual environment. If you haven
 
 ```bash
 pip install virtualenv
-```
+
 
 Create a virtual environment:
 

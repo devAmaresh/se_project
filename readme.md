@@ -62,6 +62,11 @@ Install npm packages:
 ```bash
 npm i
 ```
+Make sure to replace content by 
+```
+content: ["core/templates/**/*.html"],
+```
+in your tailwind.config.js file .
 Run this command in a new terminal both server running and tailwind build will run simultaneously...
 ```bash
 npx tailwindcss -i ./core/static/css/input.css -o ./core/static/css/output.css --watch

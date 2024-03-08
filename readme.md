@@ -69,4 +69,3 @@ The project should now be running locally. You can access it in your web browser
 - If you encounter any issues or errors during the setup process, please refer to the project documentation or contact me devAmaresh for assistance.
 
 Happy coding! 🚀
-```

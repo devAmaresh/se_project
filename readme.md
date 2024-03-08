@@ -63,7 +63,6 @@ The project should now be running locally. You can access it in your web browser
 
 ## Additional Notes
 
-- Make sure to replace `your-username` and `repository-name` with your actual GitHub username and repository name.
 - Ensure that Python and pip are installed on your system before proceeding.
 - If you encounter any issues or errors during the setup process, please refer to the project documentation or contact me devAmaresh for assistance.
 

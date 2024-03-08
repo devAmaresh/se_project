@@ -55,7 +55,7 @@ The project should now be running locally. You can access it in your web browser
 
 ### 5.Running Tailwind(optional)
 
-#### Prerequisites
+#### Prerequisites:
 Ensure you have Node.js installed on your system.
 
 Install npm packages:
@@ -66,7 +66,7 @@ Run this command in a new terminal both server running and tailwind build will r
 ```bash
 npx tailwindcss -i ./core/static/css/input.css -o ./core/static/css/output.css --watch
 ```
-If nodejs is not installed::
+#### If nodejs is not installed:
 Copy the below link and paste it in the html files 
 ```bash
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />

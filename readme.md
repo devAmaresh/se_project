@@ -1,7 +1,5 @@
 # This repo is regarding the software engineering project ..
 
-Certainly! Here's the complete README.md content written in Markdown format for your project:
-
 # Project Name Parking Management System
 This repository contains the software engineering project.
 

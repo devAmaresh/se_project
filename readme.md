@@ -3,7 +3,7 @@
 # Project Name Parking Management System
 This repository contains the software engineering project.
 
-## How to Run the Project Locally
+## How to Run the Project Locally the backend part
 
 Follow these steps to run the project on your local machine:
 

@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 def home(request):
     return render(request, 'website/homepage.html')
@@ -44,8 +46,15 @@ def signup(request):
 
 @login_required
 def dashboard(request):
-    return render(request, 'dashboard/home_dash.html')
+    if request.user.is_authenticated:
+        return render(request, 'dashboard/home_dash.html')
+    else:
+        return redirect('')
 
 def logout(request):
     auth_logout(request)
     return redirect('home')  # Redirect to homepage after logout
+
+
+def booking(request):
+    return render(request, 'dashboard/booking.html')

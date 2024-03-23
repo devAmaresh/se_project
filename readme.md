@@ -56,4 +56,4 @@ The project should now be running locally. You can access it in your web browser
 - Ensure that Python and pip are installed on your system before proceeding.
 - If you encounter any issues or errors during the setup process, please refer to the project documentation or contact me devAmaresh for assistance.
 
-Happy coding! 🚀
+Happy coding brdrs! 🚀

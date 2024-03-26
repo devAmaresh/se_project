@@ -48,8 +48,8 @@ if(isset($_POST['login']))
         <div class="container">
             <div class="login-content">
                 <div class="login-logo">
-                    <a href="index.php">
-                        <h2 style="color: #fff">VPMS!! Sign in</h2>
+                    <a href="http://localhost/parking-management/vpms/index.php">
+                        <h2 style="color: #fff">Sign in</h2>
                     </a>
                 </div>
                 <div class="login-form">
@@ -79,14 +79,15 @@ if(isset($_POST['login']))
                             </label>
 
                         </div>
+                        </form>
                         <div class="checkbox" style="padding-bottom: 20px;padding-top: 20px;">
                             
-                            <label class="pull-right" >
-                                <a href="../index.php">Home</a>
+                            <div class="pull-right" >
+                                <a href="../index.php"><button class="btn btn-info mb-4">Home</button></a>
                             </label>
 
                         </div>
-                    </form>
+               
                 </div>
             </div>
         </div>

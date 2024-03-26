@@ -70,7 +70,7 @@ return true;
         <div class="container">
             <div class="login-content">
                 <div class="login-logo">
-                    <a href="index.php">
+                    <a href="http://localhost/parking-management/vpms/index.php">
                         <h2 style="color: #fff">VPMS!! Create Your account</h2>
                     </a>
                 </div>

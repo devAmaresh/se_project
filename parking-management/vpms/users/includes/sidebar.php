@@ -9,6 +9,9 @@
 <li>
                         <a href="view-vehicle.php"> <i class="menu-icon ti-truck"></i>View Vehicle </a>
                     </li>
+                    <li>
+                        <a href="booking.php"> <i class="menu-icon ti-calendar"></i>Booking </a>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>

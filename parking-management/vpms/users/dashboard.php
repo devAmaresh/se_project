@@ -107,7 +107,6 @@ while ($row=mysqli_fetch_array($ret)) {
 
                 </div>
                 <!-- /Widgets -->
-               
             </div>
             <!-- .animated -->
         </div>

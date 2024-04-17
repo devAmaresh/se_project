@@ -2,11 +2,12 @@
 session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
+include_once ('includes/header.php');
+include_once ('includes/sidebar.php');
 error_reporting(0);
 if (strlen($_SESSION['vpmsuid']==0)) {
   header('location:logout.php');
-  } ?>
-<?php
+  } 
 $result = null;
 if (isset($_GET['city'])) {
  $city = $_GET['city'];
@@ -45,10 +46,6 @@ if (isset($_GET['city'])) {
 </head>
 
 <body>
- <?php
- include_once ('includes/header.php');
- include_once ('includes/sidebar.php');
- ?>
  <div class="p-5 bg-white">
   <h2>Available Parking Lots</h2>
   <form id="cityForm" method="get" action="">

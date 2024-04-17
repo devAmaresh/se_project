@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
   $sql4 = "UPDATE parkinglot SET bookedSlot = bookedSlot+1 WHERE id = '$parkinglot_id'";
   $result4 = mysqli_query($con, $sql4);
   if ($result4) {
-   echo '<script>alert("Booking successfully"); window.location="book_form.php";</script>';
+   echo '<script>alert("Booking successfully"); window.location="view-vehicle.php";</script>';
 
   } else {
    echo '<script>alert("Booking unsuccessfull..Plz retry"); window.location="book_form.php";</script>';
@@ -73,9 +73,14 @@ if (isset($_POST['submit'])) {
   <div class="mb-3">
    <label for="vehicleCategory" class="form-label">Vehicle Category</label>
    <select class="form-control" id="vehicleCategory" name="VehicleCategory">
-    <option value="Car">Four Wheeler</option>
-    <option value="Motorcycle">Two Wheeler</option>
-    <option value="Truck">Bicycle</option>
+   <?php
+                // Fetching vehicle categories from tblcategory
+                $sql = "SELECT VehicleCat FROM tblcategory";
+                $result = mysqli_query($con, $sql);
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo '<option value="' . $row['VehicleCat'] . '">' . $row['VehicleCat'] . '</option>';
+                }
+    ?>
    </select>
   </div>
 

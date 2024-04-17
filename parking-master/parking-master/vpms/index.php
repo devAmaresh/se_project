@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OPBS</title>
+  <!-- <link link rel="icon" href="assets/image/logo.jpg" type="image/x-icon"> -->
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous"
     referrerpolicy="no-referrer" />
@@ -66,7 +67,7 @@
           <div class="text">
             <h1>Book Your Space</h1>
             <!-- change this -->
-            <p>Lorem ipsum dolor sit amet constur adipisicing elit sed do eiusmtem por incid.
+            <p>Reserve Your Parking Spot in Advance.
             </p>
             <div class="flex">
                 <button class="primary-btn" id="read-more" onclick="readMoreToAboutSection()">READ MORE</button>
@@ -79,7 +80,7 @@
         <div class="text">
             <h1>Book Your Space</h1>
             <!-- change this -->
-            <p>Lorem ipsum dolor sit amet constur adipisicing elit sed do eiusmtem por incid.
+            <p>Reserve Your Parking Spot in Advance.
             </p>
             <div class="flex">
                 <button class="primary-btn" id="read-more" onclick="readMoreToAboutSection()">READ MORE</button>
@@ -92,7 +93,7 @@
         <div class="text">
             <h1>Book Your Space</h1>
             <!-- change this -->
-            <p>Lorem ipsum dolor sit amet constur adipisicing elit sed do eiusmtem por incid.
+            <p>Reserve Your Parking Spot in Advance.
             </p>
             <div class="flex">
               <button class="primary-btn" id="read-more" onclick="readMoreToAboutSection()">READ MORE</button>
@@ -158,8 +159,8 @@
           <h1>WELCOME</h1>
           <h2>Booking System</h2>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>We understand the frustration of searching for parking in crowded cities or busy events. That's why we've revolutionized the way you park with our convenient online booking platform. Our mission is to make parking stress-free and efficient for everyone. Whether you're heading to work, attending an event, or exploring a new city, we've got you covered. With just a few clicks, you can reserve your parking spot in advance, ensuring a seamless experience every time. Say goodbye to circling the block endlessly—welcome to a smarter way to park.
+          </p>
         <button class="primary-btn" onclick="toContactUsSection()">ABOUT US</button>
       </div>
       <div class="right">
@@ -199,8 +200,8 @@
       <div class="heading">
         <h1>EXPOLRE</h1>
         <h2>Our Parking Lots</h2>
-        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        </p>
+        <!-- <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        </p> -->
       </div>
 
       <div class="content mtop">
@@ -218,7 +219,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
               </div>
-              <p>Lorem ipsum dolor sit amet constur adipisicing elit sed do eiusmtem por incid.
+              <p>Explore convenient parking options at various locations with us. Book hassle-free parking now!
               </p>
               <div class="button flex">
                 <button class="primary-btn" onclick="userLogin()">BOOK NOW</button>
@@ -239,7 +240,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
               </div>
-              <p>Lorem ipsum dolor sit amet constur adipisicing elit sed do eiusmtem por incid.
+              <p>Explore convenient parking options at various locations with us. Book hassle-free parking now!
               </p>
               <div class="button flex">
                 <button class="primary-btn" onclick="userLogin()">BOOK NOW</button>
@@ -260,7 +261,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
               </div>
-              <p>Lorem ipsum dolor sit amet constur adipisicing elit sed do eiusmtem por incid.
+              <p>Explore convenient parking options at various locations with us. Book hassle-free parking now!
               </p>
               <div class="button flex">
                 <button class="primary-btn" onclick="userLogin()">BOOK NOW</button>
@@ -281,7 +282,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
               </div>
-              <p>Lorem ipsum dolor sit amet constur adipisicing elit sed do eiusmtem por incid.
+              <p>Explore convenient parking options at various locations with us. Book hassle-free parking now!
               </p>
               <div class="button flex">
                 <button class="primary-btn" onclick="userLogin()">BOOK NOW</button>
@@ -302,7 +303,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
               </div>
-              <p>Lorem ipsum dolor sit amet constur adipisicing elit sed do eiusmtem por incid.
+              <p>Explore convenient parking options at various locations with us. Book hassle-free parking now!
               </p>
               <div class="button flex">
                 <button class="primary-btn" onclick="userLogin()">BOOK NOW</button>
@@ -323,7 +324,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
               </div>
-              <p>Lorem ipsum dolor sit amet constur adipisicing elit sed do eiusmtem por incid.
+              <p>Explore convenient parking options at various locations with us. Book hassle-free parking now!
               </p>
               <div class="button flex">
                 <button class="primary-btn" onclick="userLogin()">BOOK NOW</button>
@@ -344,7 +345,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
               </div>
-              <p>Lorem ipsum dolor sit amet constur adipisicing elit sed do eiusmtem por incid.
+              <p>Explore convenient parking options at various locations with us. Book hassle-free parking now!
               </p>
               <div class="button flex">
                 <button class="primary-btn" onclick="userLogin()">BOOK NOW</button>
@@ -365,7 +366,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
               </div>
-              <p>Lorem ipsum dolor sit amet constur adipisicing elit sed do eiusmtem por incid.
+              <p>Explore convenient parking options at various locations with us. Book hassle-free parking now!
               </p>
               <div class="button flex">
                 <button class="primary-btn" onclick="userLogin()">BOOK NOW</button>
@@ -406,7 +407,7 @@
       <div class="heading">
         <h1>PHOTOS</h1>
         <h2>Our Gallery</h2>
-        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        <p>Explore convenient parking options at various locations with us. Book hassle-free parking now!
       </div>
     </div>
 
@@ -417,8 +418,8 @@
             <img src="assets/image/lot1.jpg" alt="">
           </div>
           <div class="overlay">
-            <span class="fa fa-plus"> </span>
-            <h3>Photo Title Here.</h3>
+            <!-- <span class="fa fa-plus"> </span> -->
+            <!-- <h3>Photo Title Here.</h3> -->
           </div>
         </div>
         <div class="items">
@@ -426,8 +427,8 @@
             <img src="assets/image/lot2.jpg" alt="">
           </div>
           <div class="overlay">
-            <span class="fa fa-plus"> </span>
-            <h3>Photo Title Here.</h3>
+            <!-- <span class="fa fa-plus"> </span> -->
+            <!-- <h3>Photo Title Here.</h3> -->
           </div>
         </div>
         <div class="items">
@@ -435,8 +436,8 @@
             <img src="assets/image/lot9.jpg" alt="">
           </div>
           <div class="overlay">
-            <span class="fa fa-plus"> </span>
-            <h3>Photo Title Here.</h3>
+            <!-- <span class="fa fa-plus"> </span> -->
+            <!-- <h3>Photo Title Here.</h3> -->
           </div>
         </div>
         <div class="items">
@@ -444,8 +445,8 @@
             <img src="assets/image/lot4.jpg" alt="">
           </div>
           <div class="overlay">
-            <span class="fa fa-plus"> </span>
-            <h3>Photo Title Here.</h3>
+            <!-- <span class="fa fa-plus"> </span> -->
+            <!-- <h3>Photo Title Here.</h3> -->
           </div>
         </div>
         <div class="items">
@@ -453,8 +454,8 @@
             <img src="assets/image/lot5.jpg" alt="">
           </div>
           <div class="overlay">
-            <span class="fa fa-plus"> </span>
-            <h3>Photo Title Here.</h3>
+            <!-- <span class="fa fa-plus"> </span> -->
+            <!-- <h3>Photo Title Here.</h3> -->
           </div>
         </div>
         <div class="items">
@@ -462,8 +463,8 @@
             <img src="assets/image/lot6.jpg" alt="">
           </div>
           <div class="overlay">
-            <span class="fa fa-plus"> </span>
-            <h3>Photo Title Here.</h3>
+            <!-- <span class="fa fa-plus"> </span> -->
+            <!-- <h3>Photo Title Here.</h3> -->
           </div>
         </div>
         <div class="items">
@@ -471,8 +472,8 @@
             <img src="assets/image/lot7.jpg" alt="">
           </div>
           <div class="overlay">
-            <span class="fa fa-plus"> </span>
-            <h3>Photo Title Here.</h3>
+            <!-- <span class="fa fa-plus"> </span> -->
+            <!-- <h3>Photo Title Here.</h3> -->
           </div>
         </div>
         <div class="items">
@@ -480,8 +481,8 @@
             <img src="assets/image/lot8.jpg" alt="">
           </div>
           <div class="overlay">
-            <span class="fa fa-plus"> </span>
-            <h3>Photo Title Here.</h3>
+            <!-- <span class="fa fa-plus"> </span> -->
+            <!-- <h3>Photo Title Here.</h3> -->
           </div>
         </div>
         <div class="items">
@@ -489,8 +490,8 @@
             <img src="assets/image/lot9.jpg" alt="">
           </div>
           <div class="overlay">
-            <span class="fa fa-plus"> </span>
-            <h3>Photo Title Here.</h3>
+            <!-- <span class="fa fa-plus"> </span> -->
+            <!-- <h3>Photo Title Here.</h3> -->
           </div>
         </div>
         <div class="items">
@@ -498,8 +499,8 @@
             <img src="assets/image/lot10.jpg" alt="">
           </div>
           <div class="overlay">
-            <span class="fa fa-plus"> </span>
-            <h3>Photo Title Here.</h3>
+            <!-- <span class="fa fa-plus"> </span> -->
+            <!-- <h3>Photo Title Here.</h3> -->
           </div>
         </div>
       </div>
@@ -537,7 +538,7 @@
       <div class="heading">
         <h1>SERVICES</h1>
         <h2>Our Services</h2>
-        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        <p>Streamline your parking experience with our easy-to-use online booking platform.
       </div>
 
 
@@ -583,24 +584,26 @@
       <div class="owl-carousel owl-carousel2 owl-theme">
         <div class="item">
           <i class="fa-solid fa-quote-right"></i>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <h3>Julia Robertson</h3>
-          <label>Julia Robertson</label>
+          <p>
+          I recently used this website when I visited Mumbai for a business meeting, and I have to say, I was pleasantly surprised! Finding parking in Mumbai can be a nightmare, but with this website, it was a breeze. The interface is so easy to navigate, and I loved that I could see all the available parking spots near my destination. It saved me so much time and hassle—I'll definitely be using it again!
+          </p>
+          <h3>Neha S</h3>
+          <label>Mumbai</label>
         </div>
         <div class="item">
           <i class="fa-solid fa-quote-right"></i>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <h3>Julia Robertson</h3>
-          <label>Julia Robertson</label>
+          <p>
+          As a frequent traveler, parking at Indian airports has always been a headache. But not anymore, thanks to them! I used it for the first time when I flew out of Delhi, and I was impressed by how smooth the process was. I booked my parking spot in advance, and when I arrived at the airport, everything was exactly as described. No more circling the parking lot or worrying about missing my flight—I can't recommend this website enough!
+              </p>
+          <h3>Rahul Kumar</h3>
+          <label>Delhi</label>
         </div>
         <div class="item">
           <i class="fa-solid fa-quote-right"></i>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <h3>Julia Robertson</h3>
-          <label>Julia Robertson</label>
+          <p>Living in Bengaluru, where parking is a constant struggle, I was thrilled to discover this website. I've used it several times now, and it's been a lifesaver! Whether I'm running errands in the city or attending a family function, I can always find parking quickly and conveniently with this website. The app's interface is user-friendly, and the prices are reasonable—it's made my life so much easier!
+          </p>
+          <h3>Priya</h3>
+          <label>Bengaluru</label>
         </div>
       </div>
     </div>
@@ -629,10 +632,10 @@
     <div class="container grid">
       <div class="box">
         <div class="logo">
-            <img src="assets/images/logo.png" alt="">
+            <!-- <img src="assets/images/logo.png" alt=""> -->
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>In our commitment to providing seamless parking solutions, we prioritizes user convenience and satisfaction. With our extensive network of parking facilities across India's major cities, we ensure that finding parking is never a hassle. Our user-friendly platform allows you to browse, book, and manage your parking reservations with ease, whether you're on the go or planning in advance. From airports to bustling city centers, we offer a range of parking options to suit every need and budget. And with our transparent pricing and secure booking process, you can trust that your parking experience with us will be smooth and stress-free. Join our community of satisfied users and experience the convenience of hassle-free parking with us.
+        </p>
 
         <div class="icon">
           <i class="fa fa-facebook-f"></i>
@@ -655,14 +658,14 @@
 
       <div class="box">
         <h2>Contact Us</h2>
-        <p>Lorem ipsum dolor sit amet constur adipisicing elit sed do eiusmtem por incid.
+        <p>Explore convenient parking options at various locations with us. Book hassle-free parking now!
         </p>
         <i class="fa fa-location-dot"></i>
-        <label>1201 park street, Avenue, Dhanmondy, Dhaka. </label> <br>
+        <label>BH2, IIITA, Jhalwa, Prayagraj. </label> <br>
         <i class="fa fa-phone"></i>
-        <label>[88] 657 524 332</label> <br>
+        <label>+91 9666666666</label> <br>
         <i class="fa fa-envelope"></i>
-        <label>info@dentar.com</label> <br>
+        <label>info@opbs.com</label> <br>
       </div>
     </div>
   </footer>

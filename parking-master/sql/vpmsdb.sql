@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2024 at 09:43 PM
+-- Generation Time: Apr 18, 2024 at 06:03 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -39,9 +39,8 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`book_id`, `user_id`, `parking_id`, `parkinglot_id`) VALUES
-(2, 4, '17133646145137749', 0),
-(3, 4, '17133647009694489', 1),
-(4, 4, '17133647449652237', 1);
+(9, 4, '17133897778166982', 1),
+(10, 4, '17133905683939843', 3);
 
 -- --------------------------------------------------------
 
@@ -62,8 +61,13 @@ CREATE TABLE `parkinglot` (
 --
 
 INSERT INTO `parkinglot` (`id`, `admin_id`, `city`, `totalSlot`, `bookedSlot`) VALUES
-(1, 1, 'Kolkata', 50, 2),
-(2, 1, 'Jaipur', 100, 0);
+(1, 1, 'Kolkata', 50, 1),
+(2, 1, 'Jaipur', 100, 0),
+(3, 1, 'Ahmedabad', 50, 1),
+(4, 1, 'Indore', 65, 0),
+(5, 1, 'New Delhi', 100, 0),
+(6, 1, 'Chennai', 65, 0),
+(7, 1, 'Mumbai', 105, 0);
 
 -- --------------------------------------------------------
 
@@ -86,7 +90,7 @@ CREATE TABLE `tbladmin` (
 --
 
 INSERT INTO `tbladmin` (`ID`, `AdminName`, `UserName`, `MobileNumber`, `Email`, `Password`, `AdminRegdate`) VALUES
-(1, 'Admin', 'admin', 7898799798, 'tester1@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2019-07-05 05:38:23');
+(1, 'Admin', 'admin', 7898799798, 'tester1@gmail.com', '202cb962ac59075b964b07152d234b70', '2019-07-05 05:38:23');
 
 -- --------------------------------------------------------
 
@@ -107,7 +111,8 @@ CREATE TABLE `tblcategory` (
 INSERT INTO `tblcategory` (`ID`, `VehicleCat`, `CreationDate`) VALUES
 (1, 'Four Wheeler Vehicle', '2022-05-01 11:06:50'),
 (2, 'Two Wheeler Vehicle', '2022-03-02 11:07:09'),
-(4, 'Bicycles', '2022-05-03 11:31:17');
+(4, 'Bicycles', '2022-05-03 11:31:17'),
+(6, 'Electric Cars', '2024-04-17 20:05:43');
 
 -- --------------------------------------------------------
 
@@ -130,8 +135,6 @@ CREATE TABLE `tblregusers` (
 --
 
 INSERT INTO `tblregusers` (`ID`, `FirstName`, `LastName`, `MobileNumber`, `Email`, `Password`, `RegDate`) VALUES
-(2, 'Anuj', 'Kumar', 1234567890, 'ak@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2022-05-10 18:05:56'),
-(3, 'SHUBHAM', 'SAINI', 7894561230, 'shubham@gmail.com', '202cb962ac59075b964b07152d234b70', '2024-02-08 04:34:22'),
 (4, 'Amaresh', 'Prasad', 9874563210, 'amprasad.2003@gmail.com', '202cb962ac59075b964b07152d234b70', '2024-03-25 14:52:57'),
 (5, 'KUSH', 'PATEL', 1452369870, 'kush@gmail.com', '202cb962ac59075b964b07152d234b70', '2024-04-02 04:47:31');
 
@@ -161,11 +164,8 @@ CREATE TABLE `tblvehicle` (
 --
 
 INSERT INTO `tblvehicle` (`ID`, `ParkingNumber`, `VehicleCategory`, `VehicleCompanyname`, `RegistrationNumber`, `OwnerName`, `OwnerContactNumber`, `InTime`, `OutTime`, `ParkingCharge`, `Remark`, `Status`) VALUES
-(21, '17133629323815473', 'Car', 'Hero', '1223874889', 'Amaresh Prasad', 9874563210, '2024-04-17 16:08:00', NULL, '', '', ''),
-(22, '17133630158875561', 'Truck', 'Hyundai', '2637823686', 'Amaresh Prasad', 9874563210, '2024-04-17 15:10:00', NULL, '', '', ''),
-(24, '17133646145137749', 'Motorcycle', 'Sainsei', '235625367', 'Amaresh Prasad', 9874563210, '2024-04-17 17:36:00', NULL, '', '', ''),
-(25, '17133647009694489', 'Motorcycle', 'sdsd', 'fdfdf', 'Amaresh Prasad', 9874563210, '2024-04-16 14:38:00', NULL, '', '', ''),
-(26, '17133647449652237', 'Car', 'SainseiX', '1232343434', 'Amaresh Prasad', 9874563210, '2024-04-18 14:38:00', NULL, '', '', '');
+(31, '17133897778166982', 'Electric Cars', 'Hero', 'WB237289839', 'Amaresh Prasad', 9874563210, '2024-04-16 21:36:00', NULL, '', '', ''),
+(32, '17133905683939843', 'Two Wheeler Vehicle', 'Honda', 'GJ263782GA298', 'Amaresh Prasad', 9874563210, '2024-04-18 01:49:00', NULL, '', '', '');
 
 --
 -- Indexes for dumped tables
@@ -217,13 +217,13 @@ ALTER TABLE `tblvehicle`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `parkinglot`
 --
 ALTER TABLE `parkinglot`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `tbladmin`
@@ -235,7 +235,7 @@ ALTER TABLE `tbladmin`
 -- AUTO_INCREMENT for table `tblcategory`
 --
 ALTER TABLE `tblcategory`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tblregusers`
@@ -247,7 +247,7 @@ ALTER TABLE `tblregusers`
 -- AUTO_INCREMENT for table `tblvehicle`
 --
 ALTER TABLE `tblvehicle`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

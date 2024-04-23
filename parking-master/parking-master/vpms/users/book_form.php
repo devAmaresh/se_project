@@ -8,6 +8,10 @@ use Razorpay\Api\Api;
 require "vendor/autoload.php";
 $keyId = 'rzp_test_w6piYgRbvr2gD1';
 $keySecret = '0BCuZqTRBmwyaruKUkipjXoY';
+$s = "SELECT * FROM tblregusers WHERE ID = " . $_SESSION['vpmsuid'];
+$res435=mysqli_query($con,$s);
+$yz=mysqli_fetch_array($res435);
+$email=$yz['Email'];
 $api = new Api($keyId, $keySecret);
 $ss = "SELECT * FROM parkinglot WHERE city='" . $_GET['city'] . "'";
 $res=mysqli_query($con,$ss);
@@ -111,7 +115,7 @@ $_SESSION['amount']=$ro['price'];
             data-buttontext="Book Now" data-name="VPMS"
             data-description="A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami"
             data-image="https://example.com/your_logo.jpg" data-prefill.name="Gaurav Kumar"
-            data-prefill.email="gaurav.kumar@example.com" data-theme.color="#F37254"></script>
+            data-prefill.email="<?= $email ?>" data-theme.color="#F37254"></script>
     </form>
 </body>
 <!-- Include your JavaScript files here -->

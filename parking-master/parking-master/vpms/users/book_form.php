@@ -4,18 +4,6 @@ include_once ('includes/header.php');
 include_once ('includes/sidebar.php');
 include ('includes/dbconnection.php');
 
-use Razorpay\Api\Api;
-
-// Include Razorpay PHP SDK
-require '../razorpay-php-2.9.0/Razorpay.php';
-
-if (isset($_POST['submit'])) {
-    // Your Razorpay API keys
-    $razorpayKeyId = 'rzp_test_w6piYgRbvr2gD1';
-    $razorpayKeySecret = '0BCuZqTRBmwyaruKUkipjXoY';
-
-    $api = new Api($razorpayKeyId, $razorpayKeySecret);
-
     // Catching form details
     if (empty($_POST['VehicleCategory']) || empty($_POST['VehicleCompanyname']) || empty($_POST['RegistrationNumber']) || empty($_POST['inTime'])) {
         echo "<script>alert('Please fill in all fields')</script>";
@@ -44,22 +32,12 @@ if (isset($_POST['submit'])) {
         $result4 = mysqli_query($con, $sql4);
 
         if ($result4) {
-            // Create order
-            $orderData = array(
-                'receipt' => $parkingnumber,
-                'amount' => 50000, // Amount in paisa (500 INR)
-                'currency' => 'INR',
-            );
-            $order = $api->order->create($orderData);
-
-            // Redirect to payment page
-            header("Location: {$order->receipt}");
-            exit;
+            echo '<script>alert("Booking successfull.."); window.location="view--vehicle.php";</script>';
         } else {
             echo '<script>alert("Booking unsuccessfull..Plz retry"); window.location="book_form.php";</script>';
         }
     }
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

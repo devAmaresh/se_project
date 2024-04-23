@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2024 at 06:03 AM
+-- Generation Time: Apr 23, 2024 at 04:04 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -31,16 +31,17 @@ CREATE TABLE `booking` (
   `book_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `parking_id` varchar(250) NOT NULL,
-  `parkinglot_id` int(11) NOT NULL
+  `parkinglot_id` int(11) NOT NULL,
+  `payment_id` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`book_id`, `user_id`, `parking_id`, `parkinglot_id`) VALUES
-(9, 4, '17133897778166982', 1),
-(10, 4, '17133905683939843', 3);
+INSERT INTO `booking` (`book_id`, `user_id`, `parking_id`, `parkinglot_id`, `payment_id`) VALUES
+(18, 4, '171387968395017', 1, 'Done manually'),
+(19, 4, '17138799564979807', 1, 'pay_O25Km2lpo7ObZc');
 
 -- --------------------------------------------------------
 
@@ -53,21 +54,22 @@ CREATE TABLE `parkinglot` (
   `admin_id` int(11) NOT NULL,
   `city` varchar(250) NOT NULL,
   `totalSlot` int(11) NOT NULL,
-  `bookedSlot` int(11) NOT NULL
+  `bookedSlot` int(11) NOT NULL,
+  `price` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `parkinglot`
 --
 
-INSERT INTO `parkinglot` (`id`, `admin_id`, `city`, `totalSlot`, `bookedSlot`) VALUES
-(1, 1, 'Kolkata', 50, 1),
-(2, 1, 'Jaipur', 100, 0),
-(3, 1, 'Ahmedabad', 50, 1),
-(4, 1, 'Indore', 65, 0),
-(5, 1, 'New Delhi', 100, 0),
-(6, 1, 'Chennai', 65, 0),
-(7, 1, 'Mumbai', 105, 0);
+INSERT INTO `parkinglot` (`id`, `admin_id`, `city`, `totalSlot`, `bookedSlot`, `price`) VALUES
+(1, 1, 'Kolkata', 50, 0, 100),
+(2, 1, 'Jaipur', 100, 0, 200),
+(3, 1, 'Ahmedabad', 50, 0, 200),
+(4, 1, 'Indore', 65, 0, 300),
+(5, 1, 'New Delhi', 100, 0, 400),
+(6, 1, 'Chennai', 65, 0, 500),
+(7, 1, 'Mumbai', 105, 0, 150);
 
 -- --------------------------------------------------------
 
@@ -90,7 +92,7 @@ CREATE TABLE `tbladmin` (
 --
 
 INSERT INTO `tbladmin` (`ID`, `AdminName`, `UserName`, `MobileNumber`, `Email`, `Password`, `AdminRegdate`) VALUES
-(1, 'Admin', 'admin', 7898799798, 'tester1@gmail.com', '202cb962ac59075b964b07152d234b70', '2019-07-05 05:38:23');
+(1, 'Admin', 'admin', 7898799798, 'tester1@gmail.com', '202cb962ac59075b964b07152d234b70', '2024-03-05 05:38:23');
 
 -- --------------------------------------------------------
 
@@ -164,8 +166,8 @@ CREATE TABLE `tblvehicle` (
 --
 
 INSERT INTO `tblvehicle` (`ID`, `ParkingNumber`, `VehicleCategory`, `VehicleCompanyname`, `RegistrationNumber`, `OwnerName`, `OwnerContactNumber`, `InTime`, `OutTime`, `ParkingCharge`, `Remark`, `Status`) VALUES
-(31, '17133897778166982', 'Electric Cars', 'Hero', 'WB237289839', 'Amaresh Prasad', 9874563210, '2024-04-16 21:36:00', NULL, '', '', ''),
-(32, '17133905683939843', 'Two Wheeler Vehicle', 'Honda', 'GJ263782GA298', 'Amaresh Prasad', 9874563210, '2024-04-18 01:49:00', NULL, '', '', '');
+(40, '171387968395017', 'Four Wheeler Vehicle', 'Range Rover', '1234567895', 'Amaresh Prasad', 9874563210, '2024-04-23 13:41:23', '2024-04-23 13:48:04', '100', 'ok', 'Out'),
+(41, '17138799564979807', 'Electric Cars', 'Hyundai', '1223848834sds', 'Amaresh Prasad', 9874563210, '2024-04-24 15:45:00', '2024-04-23 14:03:54', '100', 'ok ', 'Out');
 
 --
 -- Indexes for dumped tables
@@ -217,7 +219,7 @@ ALTER TABLE `tblvehicle`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `parkinglot`
@@ -247,7 +249,7 @@ ALTER TABLE `tblregusers`
 -- AUTO_INCREMENT for table `tblvehicle`
 --
 ALTER TABLE `tblvehicle`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

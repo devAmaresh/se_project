@@ -29,7 +29,7 @@ if (empty($_POST['razorpay_payment_id']) === false)
     }
 }
 
-if ($success === true)
+if ($success === true && isset($_POST['razorpay_payment_id']))
 {
     $html = "<p>Your payment was successful</p>
              <p>Payment ID: {$_POST['razorpay_payment_id']}</p>";
@@ -67,6 +67,8 @@ if ($success === true)
 else
 {
     $html = "<p>Your payment failed</p>
+               <a href='booking.php'>Return to booking</a>
+               <script>alert('Error in payment Plz retry')</script>;
              <p>{$error}</p>";
 }
 

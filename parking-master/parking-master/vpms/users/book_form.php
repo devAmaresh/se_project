@@ -53,9 +53,30 @@ $_SESSION['amount']=$ro['price'];
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
 
 </head>
-
+<style>
+    .razorpay-payment-button{
+    background-color: #00308F;
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+    .razorpay-payment-button{
+        background-color:  #00308F;
+    }
+    .razorpay-payment-button[disabled] {
+        opacity: 0.6; 
+        cursor: not-allowed;
+    }
+    </style>
 <body>
-    <form class="p-5" method="post" action="status.php">
+    <form class="p-5" method="post" action="status.php" id="bookingForm">
         <div class="mb-3">
             <label for="vehicleCategory" class="form-label">Vehicle Category</label>
             <select class="form-control" id="vehicleCategory" name="VehicleCategory">
@@ -94,7 +115,23 @@ $_SESSION['amount']=$ro['price'];
     </form>
 </body>
 <!-- Include your JavaScript files here -->
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+        var razorpayButton = document.querySelector('.razorpay-payment-button');
+        razorpayButton.disabled = true;
 
+        document.getElementById('bookingForm').addEventListener('input', function () {
+            var formInputs = document.querySelectorAll('#bookingForm input');
+            var allFilled = true;
+            formInputs.forEach(function (input) {
+                if (input.value === '') {
+                    allFilled = false;
+                }
+            });
+            razorpayButton.disabled = !allFilled;
+        });
+    });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>

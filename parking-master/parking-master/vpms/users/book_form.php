@@ -3,41 +3,27 @@ session_start();
 include_once ('includes/header.php');
 include_once ('includes/sidebar.php');
 include ('includes/dbconnection.php');
+use Razorpay\Api\Api;
 
-    // Catching form details
-    if (empty($_POST['VehicleCategory']) || empty($_POST['VehicleCompanyname']) || empty($_POST['RegistrationNumber']) || empty($_POST['inTime'])) {
-        echo "<script>alert('Please fill in all fields')</script>";
-    } else {
-        // Catching form details
-        $vehicleCategory = $_POST['VehicleCategory'];
-        $vehicleCompanyName = $_POST['VehicleCompanyname'];
-        $registrationNumber = $_POST['RegistrationNumber'];
-        $user_id = $_SESSION['vpmsuid'];
-        $city = $_GET['city'];
-        $OwnerContactNumber = $_SESSION['vpmsumn'];
-        $inTime = $_POST['inTime'];
-        $sql1 = "SELECT * FROM tblregusers WHERE ID = '$user_id'";
-        $result1 = mysqli_query($con, $sql1);
-        $row1 = mysqli_fetch_array($result1);
-        $OwnerName = $row1['FirstName'] . ' ' . $row1['LastName'];
-        $parkingnumber = time() . rand(0, 10000000);
-        $sql2 = "INSERT INTO tblvehicle (ParkingNumber,OwnerName, OwnerContactNumber, VehicleCategory, VehicleCompanyName, RegistrationNumber,InTime) VALUES ('$parkingnumber','$OwnerName', '$OwnerContactNumber', '$vehicleCategory', '$vehicleCompanyName', '$registrationNumber', '$inTime')";
-        $result2 = mysqli_query($con, $sql2);
-        $sql = "SELECT * FROM parkinglot WHERE city='$city'";
-        $result = mysqli_query($con, $sql);
-        $parkinglot_id = $result->fetch_assoc()['id'];
-        $sql3 = "INSERT INTO booking (user_id,parking_id,parkinglot_id) VALUES ('$user_id','$parkingnumber','$parkinglot_id')";
-        $result3 = mysqli_query($con, $sql3);
-        $sql4 = "UPDATE parkinglot SET bookedSlot = bookedSlot+1 WHERE id = '$parkinglot_id'";
-        $result4 = mysqli_query($con, $sql4);
-
-        if ($result4) {
-            echo '<script>alert("Booking successfull.."); window.location="view--vehicle.php";</script>';
-        } else {
-            echo '<script>alert("Booking unsuccessfull..Plz retry"); window.location="book_form.php";</script>';
-        }
-    }
-
+require "vendor/autoload.php";
+$keyId = 'rzp_test_w6piYgRbvr2gD1';
+$keySecret = '0BCuZqTRBmwyaruKUkipjXoY';
+$api = new Api($keyId, $keySecret);
+$ss = "SELECT * FROM parkinglot WHERE city='" . $_GET['city'] . "'";
+$res=mysqli_query($con,$ss);
+$ro=mysqli_fetch_array($res);
+$amount = $ro['price'];
+$amount = $amount * 100;
+$receipt = time() . rand(0, 10000000);
+$order = $api->order->create(array('receipt' => $receipt, 'amount' => $amount, 'currency' => 'INR'));
+$order_id = $order['id'];
+$order_receipt = $order['receipt'];
+$order_amount = $order['amount'];
+$order_currency = $order['currency'];
+$order_created_at = $order['created_at'];
+$_SESSION['razorpay_order_id'] = $order_id;
+$_SESSION['city']= $_GET['city'];
+$_SESSION['amount']=$ro['price'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,9 +53,30 @@ include ('includes/dbconnection.php');
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
 
 </head>
-
+<style>
+    .razorpay-payment-button{
+    background-color: #00308F;
+        border: none;
+        color: white;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+    .razorpay-payment-button{
+        background-color:  #00308F;
+    }
+    .razorpay-payment-button[disabled] {
+        opacity: 0.6; 
+        cursor: not-allowed;
+    }
+    </style>
 <body>
-    <form class="p-5" method="post" action="">
+    <form class="p-5" method="post" action="status.php" id="bookingForm">
         <div class="mb-3">
             <label for="vehicleCategory" class="form-label">Vehicle Category</label>
             <select class="form-control" id="vehicleCategory" name="VehicleCategory">
@@ -96,14 +103,35 @@ include ('includes/dbconnection.php');
             <label for="inTime" class="form-label">Date</label>
             <input type="datetime-local" class="form-control" id="registrationNumber" name="inTime">
         </div>
-        <button type="submit" class="btn btn-primary" name="submit">
+        <!-- <button type="submit" class="btn btn-primary" name="submit">
             Submit
-        </button>
+        </button> -->
+        <script src="https://checkout.razorpay.com/v1/checkout.js" data-key="<?= $keyId ?>" //
+            data-amount="<?= $order_amount ?>" data-currency="<?= $order_currency ?>" data-order_id="<?= $order_id ?>"
+            data-buttontext="Book Now" data-name="VPMS"
+            data-description="A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami"
+            data-image="https://example.com/your_logo.jpg" data-prefill.name="Gaurav Kumar"
+            data-prefill.email="gaurav.kumar@example.com" data-theme.color="#F37254"></script>
     </form>
 </body>
-
 <!-- Include your JavaScript files here -->
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+        var razorpayButton = document.querySelector('.razorpay-payment-button');
+        razorpayButton.disabled = true;
 
+        document.getElementById('bookingForm').addEventListener('input', function () {
+            var formInputs = document.querySelectorAll('#bookingForm input');
+            var allFilled = true;
+            formInputs.forEach(function (input) {
+                if (input.value === '') {
+                    allFilled = false;
+                }
+            });
+            razorpayButton.disabled = !allFilled;
+        });
+    });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>

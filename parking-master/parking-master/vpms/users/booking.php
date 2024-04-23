@@ -46,7 +46,6 @@ if (isset($_GET['city'])) {
 
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
-
 </head>
 
 <body>
@@ -85,7 +84,6 @@ if (isset($_GET['city'])) {
                  <div class="card-body">
                      <h5 class="card-title">' . $row['city'] . '</h5>
                      <p class="card-text">Available Slots: ' . ($row['totalSlot'] - $row['bookedSlot']) . '</p>';
-
                     // Check if slots are available
                     if (($row['totalSlot'] - $row['bookedSlot']) > 0) {
                         echo '<a href="book_form.php?city=' . $row['city'] . '" class="btn btn-primary">Book Now</a>';
@@ -118,10 +116,11 @@ if (isset($_GET['city'])) {
                         echo '
             <div class="col-md-4">
                 <div class="pt-3 mt-2 px-5 pb-0 bg-white">
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://png.pngtree.com/png-clipart/20230414/original/pngtree-car-parking-sign-design-template-png-image_9055936.png" class="card-img-top" alt="...">
+                    <div class="card" style="width: 18rem;border:1px solid black; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);">
+                        <img src="https://png.pngtree.com/png-clipart/20230414/original/pngtree-car-parking-sign-design-template-png-image_9055936.png" class="card-img-top" alt="..." style="object-fit: cover; height: 190px;">
                         <div class="card-body">
                             <h5 class="card-title">' . $row['city'] . '</h5>
+                            <h5 class="card-title"> ₹' . $row['price'] . '</h5>
                             <p class="card-text">Available Slots: ' . ($row['totalSlot'] - $row['bookedSlot']) . '</p>';
                         // Check if slots are available
                         if (($row['totalSlot'] - $row['bookedSlot']) > 0) {
@@ -182,9 +181,9 @@ if (isset($_GET['city'])) {
             return true; // Allow form submission
         }
         function closeAlert() {
-        let alertElement = document.querySelector('.alert');
-        alertElement.style.display = 'none';
-    }
+            let alertElement = document.querySelector('.alert');
+            alertElement.style.display = 'none';
+        }
     </script>
 
 </body>

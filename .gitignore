@@ -1,3 +1,7 @@
 node_modules/
 myvenv/
 .env
+razorpay-php-2.9.0/
+parking-master/parking-master/vpms/users/vendor
+parking-master/parking-master/vpms/users/composer.lock
+parking-master/parking-master/vpms/users/composer.json

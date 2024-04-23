@@ -12,7 +12,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
         <a href="view-vehicle.php"> <i class="menu-icon ti-truck"></i>View Vehicle </a>
     </li>
     <li class="<?php if($current_page == 'booking.php') echo 'active'; ?>">
-        <a href="booking.php"> <i class="menu-icon ti-truck"></i>Booking </a>
+        <a href="booking.php"> <i class="menu-icon ti-bookmark-alt"></i>Booking </a>
     </li>
 </ul>
             </div><!-- /.navbar-collapse -->

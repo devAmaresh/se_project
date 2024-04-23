@@ -8,10 +8,14 @@ use Razorpay\Api\Api;
 require "vendor/autoload.php";
 $keyId = 'rzp_test_w6piYgRbvr2gD1';
 $keySecret = '0BCuZqTRBmwyaruKUkipjXoY';
+$s = "SELECT * FROM tblregusers WHERE ID = " . $_SESSION['vpmsuid'];
+$res435 = mysqli_query($con, $s);
+$yz = mysqli_fetch_array($res435);
+$email = $yz['Email'];
 $api = new Api($keyId, $keySecret);
 $ss = "SELECT * FROM parkinglot WHERE city='" . $_GET['city'] . "'";
-$res=mysqli_query($con,$ss);
-$ro=mysqli_fetch_array($res);
+$res = mysqli_query($con, $ss);
+$ro = mysqli_fetch_array($res);
 $amount = $ro['price'];
 $amount = $amount * 100;
 $receipt = time() . rand(0, 10000000);
@@ -22,8 +26,8 @@ $order_amount = $order['amount'];
 $order_currency = $order['currency'];
 $order_created_at = $order['created_at'];
 $_SESSION['razorpay_order_id'] = $order_id;
-$_SESSION['city']= $_GET['city'];
-$_SESSION['amount']=$ro['price'];
+$_SESSION['city'] = $_GET['city'];
+$_SESSION['amount'] = $ro['price'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,8 +58,8 @@ $_SESSION['amount']=$ro['price'];
 
 </head>
 <style>
-    .razorpay-payment-button{
-    background-color: #00308F;
+    .razorpay-payment-button {
+        background-color: #00308F;
         border: none;
         color: white;
         padding: 10px 15px;
@@ -67,14 +71,17 @@ $_SESSION['amount']=$ro['price'];
         cursor: pointer;
         border-radius: 10px;
     }
-    .razorpay-payment-button{
-        background-color:  #00308F;
+
+    .razorpay-payment-button {
+        background-color: #00308F;
     }
+
     .razorpay-payment-button[disabled] {
-        opacity: 0.6; 
+        opacity: 0.6;
         cursor: not-allowed;
     }
-    </style>
+</style>
+
 <body>
     <form class="p-5" method="post" action="status.php" id="bookingForm">
         <div class="mb-3">
@@ -101,7 +108,7 @@ $_SESSION['amount']=$ro['price'];
         </div>
         <div class="mb-3">
             <label for="inTime" class="form-label">Date</label>
-            <input type="datetime-local" class="form-control" id="registrationNumber" name="inTime">
+            <input type="datetime-local" class="form-control" id="inTime" name="inTime">
         </div>
         <!-- <button type="submit" class="btn btn-primary" name="submit">
             Submit
@@ -111,12 +118,12 @@ $_SESSION['amount']=$ro['price'];
             data-buttontext="Book Now" data-name="VPMS"
             data-description="A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami"
             data-image="https://example.com/your_logo.jpg" data-prefill.name="Gaurav Kumar"
-            data-prefill.email="gaurav.kumar@example.com" data-theme.color="#F37254"></script>
+            data-prefill.email="<?= $email ?>" data-theme.color="#F37254"></script>
     </form>
 </body>
 <!-- Include your JavaScript files here -->
 <script>
-   document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function () {
         var razorpayButton = document.querySelector('.razorpay-payment-button');
         razorpayButton.disabled = true;
 
@@ -132,6 +139,34 @@ $_SESSION['amount']=$ro['price'];
         });
     });
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var inputDateTime = document.getElementById('inTime');
+        var now = new Date();
+        var ISTOffset = 330 * 60000;
+        var ISTDateTime = new Date(now.getTime() + ISTOffset);
+
+        console.log("Current Date and Time (IST):", ISTDateTime);
+
+
+        var currentDateTime = ISTDateTime.toISOString().slice(0, 16);
+        console.log("Current Date and Time (Formatted):", currentDateTime);
+        inputDateTime.addEventListener('change', function () {
+            var selectedDateTime = new Date(inputDateTime.value);
+            var now = new Date();
+            if (selectedDateTime <= now) {
+                alert("Please select a time ahead of the current time.");
+                inputDateTime.value = '';
+            }
+        });
+
+        inputDateTime.min = currentDateTime;
+        console.log("Minimum Value of Input Field (DateTime):", inputDateTime.min);
+    });
+</script>
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>

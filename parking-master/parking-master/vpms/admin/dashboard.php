@@ -380,8 +380,8 @@ $listedcat=mysqli_num_rows($query);
                     if(data.type === 'line' || data.type === 'area') {
                         data.element.animate({
                             d: {
-                                begin: 2000 * data.index,
-                                dur: 2000,
+                                begin: 100 * data.index,
+                                dur: 20,
                                 from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
                                 to: data.path.clone().stringify(),
                                 easing: Chartist.Svg.Easing.easeOutQuint

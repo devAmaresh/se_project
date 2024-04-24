@@ -8,10 +8,27 @@ if (strlen($_SESSION['vpmsaid']==0)) {
 // For deleting    
 if($_GET['del']){
 $catid=$_GET['del'];
-mysqli_query($con,"delete from tblvehicle where ID ='$catid'");
+$r1=mysqli_query($con,"select * from tblvehicle where ID='$catid'");
+$row=mysqli_fetch_array($r1);
+$parking_id = $row['ParkingNumber'];
+$r=mysqli_query($con,"select * from tblvehicle where ID='$catid'");
+$updateSql = "UPDATE parkinglot
+      JOIN booking ON parkinglot.id = booking.parkinglot_id
+      SET parkinglot.bookedSlot = parkinglot.bookedSlot - 1
+      WHERE booking.parking_id = '$parking_id'";
+$updateRes = mysqli_query($con, $updateSql);
+$sql = "DELETE tblvehicle, booking FROM tblvehicle
+LEFT JOIN booking ON tblvehicle.ParkingNumber = booking.parking_id
+WHERE tblvehicle.ID = '$catid'";
+$res = mysqli_query($con, $sql);
+
+if ($res && $updateRes) {
 echo "<script>alert('Data Deleted');</script>";
+} else {
+echo "<script>alert('Failed to delete data');</script>";
+}
 echo "<script>window.location.href='manage-incomingvehicle.php'</script>";
-          }
+}
 
 
   ?>

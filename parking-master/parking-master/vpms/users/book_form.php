@@ -117,7 +117,7 @@ $_SESSION['amount'] = $ro['price'];
             data-amount="<?= $order_amount ?>" data-currency="<?= $order_currency ?>" data-order_id="<?= $order_id ?>"
             data-buttontext="Book Now" data-name="VPMS"
             data-description="A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami"
-            data-image="https://example.com/your_logo.jpg" data-prefill.name="Gaurav Kumar"
+            data-image="https://cdn.pixabay.com/photo/2023/03/23/07/56/ai-generated-7871392_1280.jpg" data-prefill.name="Gaurav Kumar"
             data-prefill.email="<?= $email ?>" data-theme.color="#F37254"></script>
     </form>
 </body>

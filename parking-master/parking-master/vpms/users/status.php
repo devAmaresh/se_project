@@ -6,8 +6,8 @@ require "vendor/autoload.php";
 $success = true;
 
 $error = "Payment Failed";
-$keyId = 'rzp_test_w6piYgRbvr2gD1';
-$keySecret = '0BCuZqTRBmwyaruKUkipjXoY';
+$keyId = '';
+$keySecret = '';
 if (empty($_POST['razorpay_payment_id']) === false)
 {
     $api = new Api($keyId, $keySecret);

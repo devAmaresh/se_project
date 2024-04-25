@@ -6,8 +6,8 @@ include ('includes/dbconnection.php');
 use Razorpay\Api\Api;
 
 require "vendor/autoload.php";
-$keyId = 'rzp_test_w6piYgRbvr2gD1';
-$keySecret = '0BCuZqTRBmwyaruKUkipjXoY';
+$keyId = '';
+$keySecret = '';
 $s = "SELECT * FROM tblregusers WHERE ID = " . $_SESSION['vpmsuid'];
 $res435 = mysqli_query($con, $s);
 $yz = mysqli_fetch_array($res435);

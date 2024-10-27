@@ -1,6 +1,6 @@
 # This repo is regarding the software engineering project ..
 # Deployed link
-<a href="https://eazyparking.000webhostapp.com/" target="_blank">Link</a>
+<a href="https://economic-charline-saini-042465c4.koyeb.app/" target="_blank">Link</a>
 # Project Name Parking Management System
 This repository contains the software engineering project.
 
